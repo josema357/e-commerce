@@ -32,7 +32,7 @@
     </div>
     <div class="flex items-center">
       <button class="px-2 rounded relative" (click)="toogleMenu()">
-        <div *ngIf="cart.length > 0" class="absolute -top-2 -left-2 rounded-[50%] h-4 w-4 bg-black text-white text-xs">{{ cart.length }}</div>
+        <div *ngIf="cart().length > 0" class="absolute -top-2 -left-2 rounded-[50%] h-4 w-4 bg-black text-white text-xs">{{ cart().length }}</div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -75,7 +75,7 @@
     </button>
   </div>
   <div class="flex flex-col pt-4">
-    <div class="flex justify-between items-center space-y-2" *ngFor="let product of cart">
+    <div class="flex justify-between items-center space-y-2" *ngFor="let product of cart()">
       <div class="flex  space-x-2 items-center">
         <img class="w-5 h-5" [src]="product.image" [alt]="product.title">
         <h3>{{product.title}}</h3>
